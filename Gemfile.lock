@@ -64,6 +64,5 @@ DEPENDENCIES
   minitest (~> 5.4.0)
   poltergeist
   pry
-  rack (~> 1.5.2)
   rvm-capistrano
   webmock (~> 1.18.0)
