@@ -12,7 +12,7 @@ class TheWatcher
   def watch!
     while current_state == inital_state
       sleep 0.01
-      @current_state = fetch_page
+      # fill me in
     end
     true
   end
