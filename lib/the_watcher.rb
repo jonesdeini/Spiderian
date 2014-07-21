@@ -6,8 +6,7 @@ class TheWatcher
 
   def initialize(url)
     @uri = URI(url)
-    @inital_state = fetch_page
-    @current_state = fetch_page
+    @current_state = @inital_state = fetch_page
   end
 
   def watch!
