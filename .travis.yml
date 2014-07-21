@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.1.1
+branches:
+  only:
+    - master
+language: ruby
+cache: bundler
+script:
+  - ruby -Itest -Ilib test/the_watcher_test.rb
