@@ -22,3 +22,6 @@ namespace :deploy do
     run "cp -R ~/shared/config/* #{current_path}/config/"
   end
 end
+
+before 'deploy:setup', 'rvm:install_rvm'
+before 'deploy:setup', 'rvm:install_ruby'
