@@ -1,5 +1,7 @@
 require_relative 'the_watcher'
+require_relative 'light_speed'
+require_relative 'seakrets'
 
-if TheWatcher.new("http://jonesdeini.com/test").watch!
-
+if TheWatcher.new(URL).watch!
+  LightSpeed.blaze!
 end
