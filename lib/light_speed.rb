@@ -2,8 +2,6 @@ require "capybara"
 require "capybara/poltergeist"
 require "capybara/dsl"
 
-require_relative 'seakrets'
-
 Capybara.javascript_driver = :poltergeist
 Capybara.run_server = false
 
