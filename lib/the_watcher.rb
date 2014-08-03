@@ -18,6 +18,10 @@ class TheWatcher
   end
 
   def fetch_page
-    Net::HTTP.get(uri)
+    begin
+      Net::HTTP.get(uri)
+    rescue Errno::ECONNREFUSED
+      puts 'connection refused'
+    end
   end
 end
