@@ -2,8 +2,11 @@ require "capybara"
 require "capybara/poltergeist"
 require "capybara/dsl"
 
-Capybara.javascript_driver = :poltergeist
 Capybara.run_server = false
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, {js_errors: false, phantomjs_options: ['--load-images=no']})
+end
 
 module LightSpeed
 
