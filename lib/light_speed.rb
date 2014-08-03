@@ -16,7 +16,7 @@ module LightSpeed
     session ||= Capybara::Session.new(:poltergeist)
 
     session.visit(URL)
-    session.first("form").click
+    session.document.find_css('form').detect{|form| form['action'].include? "https://www.paypal.com/cgi-bin/webscr"}.click
     wait_for_javascript
     session.fill_in("login_email", :with => LOGIN)
     session.fill_in("login_password", :with => PASSWORD)
