@@ -11,7 +11,7 @@ class TheWatcher
 
   def watch!
     while current_state == inital_state
-      sleep 0.01
+      sleep 1
       fetch_page
     end
     true
