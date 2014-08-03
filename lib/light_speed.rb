@@ -7,7 +7,7 @@ require_relative 'seakrets'
 Capybara.javascript_driver = :poltergeist
 Capybara.run_server = false
 
-module RatMan
+module LightSpeed
 
   include Capybara::DSL
 
@@ -15,12 +15,14 @@ module RatMan
     session ||= Capybara::Session.new(:poltergeist)
 
     session.visit(URL)
-    session.click_link("paypal")
-    session.fill_in("email", :with => LOGIN)
-    session.fill_in("password", :with => PASSWORD)
-    session.click_button("LOG IN")
+    session.first("form").click
     wait_for_javascript
+    session.fill_in("login_email", :with => LOGIN)
+    session.fill_in("login_password", :with => PASSWORD)
+    session.find("submitLogin").click
     session.save_screenshot('login.png')
+    session.find("continue_abovefold").click
+    session.save_screenshot('pay.png')
     return session
   end
 
