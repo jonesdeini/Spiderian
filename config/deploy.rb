@@ -26,4 +26,4 @@ end
 before 'deploy:setup', 'rvm:install_rvm'
 before 'deploy:setup', 'rvm:install_ruby'
 
-after 'deploy:update_code', 'deploy:symlink_configs'
+after 'deploy:create_symlink', 'deploy:symlink_configs'
